@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background: #c7c2c2;
+  background: #fff;
 }
 
 .container {
@@ -23,9 +23,6 @@ body {
   background-color: #0056b3;
 }
 
-#toggle-favorite-btn {
-  display: none;
-}
 .quote {
   font-style: italic;
 }
@@ -42,11 +39,11 @@ body {
 }
 
 .favorite-card {
-  background-color: #f1f889;
+  background-color: #e5cbfd;
   padding: 10px 20px;
   margin: 10px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   width: 25%;
 }
 .author {
@@ -54,7 +51,7 @@ body {
 }
 
 .star-icon {
-  color: yellow;
+  color: rgb(255, 227, 0);
   font-size: 30px;
   vertical-align: middle;
   cursor: pointer;
