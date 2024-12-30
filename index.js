@@ -11,7 +11,6 @@ function setCurrentQuote(quote) {
 const favoritesContainer = document.getElementById('favorites-container');
 const favoriteBtn = document.getElementById('favorite-btn');
 const generateBtn = document.getElementById('geterate-btn');
-
 hideFavoriteBtn(favoriteBtn);
 
 generateBtn.addEventListener('click', () =>
