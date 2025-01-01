@@ -14,7 +14,7 @@ function displayQuote(quote) {
   const quoteAuthorElement = document.getElementById('quote-author');
   //Current quote will have data-current-quote-id HTML attribute
   quoteElement.dataset.currentQuoteId = id;
-  quoteTextElement.textContent = text;
+  quoteTextElement.textContent = `"${text}"`;
   quoteAuthorElement.textContent = author;
   handleFavorite(isFavorite);
 }
