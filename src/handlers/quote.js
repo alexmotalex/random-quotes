@@ -24,4 +24,8 @@ function choseRandomQuote(quotes) {
   return quotes[randomIndex];
 }
 
-export {handleQuote};
+function findQuoteById(quotes, id) {
+  return quotes.find((quote) => quote.id === id);
+}
+
+export {handleQuote, displayQuote, findQuoteById};
