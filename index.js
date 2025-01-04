@@ -10,11 +10,30 @@ import {
   localStorageGetItem,
 } from './src/utils/localStorage.js';
 
+const favoriteQuotes = [];
 let currentQuote = null;
 
-function setCurrentQuote(quote) {
+function setCurrentQuote(quote, shouldToggleIsFavorite = false) {
+  if (shouldToggleIsFavorite) {
+    quote.isFavorite = !quote.isFavorite;
+    //change local storage favotiteQuotes
+    if (quote.isFavorite) {
+      favoriteQuotes.push({...quote});
+    } else {
+      const index = favoriteQuotes.findIndex(
+        (favoriteQuote) => favoriteQuote.id === quote.id
+      );
+
+      if (index !== -1) {
+        favoriteQuotes.splice(index, 1);
+      }
+    }
+
+    localStorageSetItem('favoriteQuotes', favoriteQuotes);
+  }
   currentQuote = quote;
-  localStorageSetItem('currentQuote', quote);
+
+  localStorageSetItem('currentQuote', currentQuote);
 }
 
 function init() {
@@ -34,7 +53,6 @@ window.addEventListener('load', init);
 const favoritesContainer = document.getElementById('favorites-container');
 const quoteFavoriteBtn = document.getElementById('quote-favorite-btn');
 const generateBtn = document.getElementById('geterate-btn');
-
 hideFavoriteBtn();
 
 generateBtn.addEventListener('click', () =>

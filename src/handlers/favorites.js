@@ -1,8 +1,9 @@
 import {quoteFavoriteBtn} from '../../index.js';
 
 function toggleFavorite(quote, setCurrentQuote, container) {
-  quote.isFavorite = !quote.isFavorite;
-  setCurrentQuote(quote);
+  const shouldToggleIsFavorite = true;
+
+  setCurrentQuote(quote, shouldToggleIsFavorite);
   toggleFavoriteBtnIcon(quote.isFavorite);
 
   if (quote.isFavorite) {
